@@ -10,4 +10,4 @@ coverage/
 *.log
 *.lock
 .wwebjs_cache/
-.wwebjs_auth
+.wwebjs_auth/
