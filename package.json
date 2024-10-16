@@ -1,0 +1,17 @@
+{
+  "name": "service-whatsapp",
+  "version": "1.0.0",
+  "description": "whatsapp service based on the whatsapp web package",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "whatsapp",
+    "service",
+    "whatsapp",
+    "web"
+  ],
+  "author": "alvianzf",
+  "license": "ISC"
+}
