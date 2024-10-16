@@ -9,3 +9,5 @@ coverage/
 *.tgz
 *.log
 *.lock
+.wwebjs_cache/
+.wwebjs_auth
