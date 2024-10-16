@@ -1,10 +1,12 @@
 # WhatsApp Web API Project Documentation 📱
 
+
 This project utilizes the WhatsApp Web API to send messages and manage WhatsApp client state. It includes a Node.js server built with Express.js, handling API requests for sending messages and checking the WhatsApp client status. 🚀
 
 [![Node.js](https://img.shields.io/badge/Node.js-14.17.0-green.svg)](https://nodejs.org/en/)
 [![Express.js](https://img.shields.io/badge/Express.js-4.17.1-blue.svg)](https://expressjs.com/)
 [![WhatsApp Web API](https://img.shields.io/badge/WhatsApp%20Web%20API-2.0.0-orange.svg)](https://developers.facebook.com/docs/whatsapp/api)
+[![Puppeteer](https://img.shields.io/badge/Puppeteer-23.5.3-purple.svg)](https://pptr.dev/)
 
 ## Table of Contents
 
@@ -138,6 +140,7 @@ Content-Type: application/json
 * **WhatsApp Web API** 📱: For interacting with WhatsApp.
 * **qrcode-terminal** 📟: For generating QR codes in the terminal.
 * **dotenv** 🌐: For managing environment variables.
+* **Puppeteer** 🕷️: For automating browser tasks.
 
 ### Running the Project
 
