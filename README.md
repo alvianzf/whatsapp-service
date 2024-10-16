@@ -25,7 +25,8 @@ This project utilizes the WhatsApp Web API to send messages and manage WhatsApp 
 * **Method:** POST 📨
 * **Description:** Sends a message to a specified recipient. 📩
 * **Request Body:**
-	+ `message`: The message to be sent. 📝
+	+ `data`: The data to be formatted into a message. 📝
+		- Note: The data should include the booking code, name, date, from, and to.
 	+ `recipient`: The phone number of the recipient in international format (e.g., +6281234567890). 📞
 		- Note: Indonesian phone numbers should start with `+62` followed by the phone number. The leading `0` should be omitted.
 * **Response:**
@@ -56,7 +57,13 @@ POST /api/send-message HTTP/1.1
 Content-Type: application/json
 
 {
-  "message": "Hello, this is a test message!",
+  "data": {
+    "bookingCode": "ABC123",
+    "name": "John Doe",
+    "date": "2022-01-01",
+    "from": "Jakarta",
+    "to": "Bandung"
+  },
   "recipient": "+6281234567890"
 }
 ```
@@ -68,7 +75,7 @@ Content-Type: application/json
 
 {
   "recipient": "6281234567890@c.us",
-  "message": "Hello, this is a test message!",
+  "message": "Konfirmasi Pemesanan Tiket\n\nKode Booking: ABC123\nNama: John Doe\nTanggal: 2022-01-01\nDari: Jakarta\nKe: Bandung\n\nTerima kasih telah memesan tiket di tiketq.com. Silakan simpan kode booking ini untuk referensi Anda.",
   "status": "Message sent successfully"
 }
 ```
@@ -149,4 +156,3 @@ Contributions are welcome. Please open a pull request with your changes. 🙌
 * **WhatsApp Client Initialization:** The WhatsApp client may not initialize properly if the system does not have the required dependencies installed.
 * **Message Sending:** Message sending may fail if the recipient's phone number is not in the correct format. Specifically, Indonesian phone numbers should start with `+62` followed by the phone number, omitting the leading `0`.
 * **Phone Number Validation:** The system may not validate phone numbers correctly if they start with `0` or do not follow the expected format.
-

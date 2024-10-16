@@ -2,11 +2,12 @@ const express = require("express");
 const router = express.Router();
 const { getClient } = require("../../../utils/whatsapp/client");
 const { formatPhoneNumber } = require("../../../utils/phoneNumberFormatter");
+const { formatMessage } = require("../../../utils/whatsapp/message-formatter");
 
 router.post("/", async (req, res) => {
-  const { message, recipient } = req.body;
+  const { data, recipient } = req.body;
 
-  if (!message || !recipient) {
+  if (!data || !recipient) {
     return res.errorResponse("Message and recipient are required", 400);
   }
 
@@ -17,6 +18,9 @@ router.post("/", async (req, res) => {
 
   try {
     const formattedRecipient = formatPhoneNumber(recipient);
+
+    const message = formatMessage(data);
+    
     await client.sendMessage(formattedRecipient, message);
     console.log(`Message sent: "${message}" to ${formattedRecipient}`);
     return res.successResponse(
